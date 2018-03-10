@@ -1,0 +1,40 @@
+\babel@toc {ngerman}{}
+\contentsline {chapter}{\numberline {1}Mein mehrspaltiger Text}{5}
+\contentsline {section}{\numberline {Kat.1}Goethe – Werther}{5}
+\contentsline {section}{\numberline {Kat.2}Übersetzung „Griechisch / Deutsch“}{6}
+\contentsline {section}{\numberline {Kat.3}Griechisch-Deutsch mit highly educated fashionable paket}{7}
+\babel@toc {ngerman}{}
+\babel@toc {ngerman}{}
+\babel@toc {ngerman}{}
+\babel@toc {ngerman}{}
+\contentsline {chapter}{\numberline {2}Tabellen}{11}
+\contentsline {section}{\numberline {Kat.1}Handarbeit}{11}
+\contentsline {section}{\numberline {Kat.2}Boardmittel mit TeXStudio}{11}
+\contentsline {section}{\numberline {Kat.3}Online Hilfen}{11}
+\contentsline {chapter}{\numberline {3}Indexe.}{13}
+\contentsline {section}{\numberline {Kat.1}Personennamen in der Marginalspalte}{13}
+\contentsline {section}{\nonumberline Index antiker Personen}{15}
+\contentsline {section}{\nonumberline Index antiker Werke und deren Textstellen}{16}
+\contentsline {chapter}{\numberline {4}Infos}{17}
+\contentsline {section}{\numberline {Kat.1}Einstiegsbeispiel}{17}
+\contentsline {chapter}{\numberline {5}Glossar.}{19}
+\contentsline {section}{\numberline {Kat.1}Glossar aus csv-Datei generieren}{20}
+\contentsline {chapter}{\numberline {6}Serienbriefe, die zweite}{23}
+\contentsline {section}{\numberline {Kat.1}Studierende an der HU}{23}
+\contentsline {section}{\numberline {Kat.2}Basic}{23}
+\contentsline {section}{\numberline {Kat.3}Archäologischer Katalog der Häuser von Pompeji}{24}
+\contentsline {chapter}{\numberline {7}Abbildungen und die Feinheiten}{29}
+\contentsline {section}{\numberline {7.1}Drehen von Abbildungen}{29}
+\contentsline {subsection}{\numberline {7.1.1}Wilhelm von Humboldt}{29}
+\contentsline {subsection}{\numberline {7.1.2}Alexander von Humboldt}{30}
+\contentsline {section}{\numberline {7.2}Abbildungen beschriften}{30}
+\contentsline {section}{\numberline {7.3}Ausschnitthafte Vergrößerungen bei Abbildungen}{30}
+\contentsline {chapter}{\numberline {8}Konditionale Operatoren.}{31}
+\contentsline {section}{\numberline {8.1}Widmung}{31}
+\contentsline {section}{\numberline {8.2}Abbildungen}{31}
+\contentsline {subsection}{\numberline {8.2.1}Die zwei Brüder von Humboldt}{31}
+\contentsline {chapter}{\numberline {9}Tafelabbildungen}{33}
+\contentsline {chapter}{\numberline {A}Katalog der Häuser}{35}
+\contentsline {section}{\numberline {Kat.1}Haus des M. Fabius Rufus}{35}
+\contentsline {section}{\numberline {Kat.2}Haus des Wilden Ebers}{35}
+\contentsline {section}{\numberline {Kat.3}Casa di Santo Christo}{36}

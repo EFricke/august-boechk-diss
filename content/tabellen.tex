@@ -1,0 +1,68 @@
+%!TEX root = ../document-diss.tex
+
+\chapter{Tabellen}
+
+\section{Handarbeit}
+%------------------------------------------------------------------------
+% Geht so eine Tabelle auch in diesem LaTeX???
+%-----------------------------------------------------------------------
+\begin{table}[h]
+\begin{tabular}{@{}l|ll}%3 Spalten: l linksbündig, c zentriert, r rechts; | damit vertikale Stricke zwischen Spalten; @{} = Inhalt ganz links ran
+Anzahl & Farbe & Motiv\\
+\toprule
+1 & rotfigurig & Theseus\tablefootnote{Theseus ist der Beste.}\\
+3 & schwarzfigurig & Herakles und die Hydra\\
+2 & rotfigurig & Etokles und Polyneikes im Kampf\\
+\bottomrule
+\end{tabular}
+\caption{Tabelle mit Vasenmotiven}
+\label{tab:vasen}
+\end{table}
+
+Ich verweise auf Tabelle \ref{tab:vasen}.
+%+--------+----------------+----------------------------------+
+%| Anzahl | Farbe          | Motiv                            |
+%+========+================+==================================+
+%| 1      | rotfigurig     | Theseus[[FUßNote: Theseus ist der Beste!]]               
+%+--------+----------------+----------------------------------+
+%| 3      | schwarzfigurig | Herakles und die Hydra           |
+%+--------+----------------+----------------------------------+
+%| 2      | rotfigurig     | Eteokles und Polyneikes im Kampf |
+
+
+\section{Boardmittel mit TeXStudio}
+
+\begin{tabular}{|c|c|c|}
+	\hline 
+	Anzahl & Farbe  & Motiv \\ 
+	\hline 
+	1 & rotfigurig & Theseus \\ 
+	\hline 
+	2 & schwarz & Herakles \\ 
+	\hline 
+	3 & rot & Eteokles  \\ 
+	\hline 
+\end{tabular} 
+
+
+\section{Online Hilfen}
+
+\begin{table}[h]
+	\centering
+	\caption{My caption}
+	\label{my-label}
+	\begin{tabular}{lllll}
+		Anzahl & Farbe & Motiv &  &  \\
+		1      &       &       &  &  \\
+		2      &       &       &  &  \\
+		2      &       &       &  & 
+	\end{tabular}
+\end{table}
+
+% Habe ich schon mal recherchiert
+http://truben.no/table/
+https://www.tablesgenerator.com
+https://en.wikibooks.org/wiki/LaTeX/Tables
+
+
+

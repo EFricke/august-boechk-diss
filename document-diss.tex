@@ -1,0 +1,57 @@
+%!TEX TS-program = lualatex
+%!BIB program = biber 
+%!TEX spellcheck = de_DE
+\documentclass[
+  parskip = half,%Absätze haleb Zeile
+ numbers=noenddot, %so oder öhnlich, damit kein Punkt nach Karalognummern etc
+  %draft,%für schnelles Beschleunigung, aber manchmal keeine Bilder u.ä.
+  greek,
+  ngerman, %Hauptstprache
+]{scrbook}
+
+%\PassOptionsToPackage{draft}{graphicx}%hiermit schneller kompilieren
+
+\input{preamble/packages}
+
+
+%\newtoggle{testdokument}
+%\newtoggle{finalpdf}
+%\toggletrue{testdokument}%wenn nicht nur das gewollt, dann deaktivieren
+%\toggletrue{finalpdf}
+%
+%\toggletrue{nocopyright}
+%\iftoggle{finalpdf}
+%{\togglefalse{testdokument}}
+%{\iftoggle{testdokument}%
+%{}
+%{\includeonly{content/konditionale-operatoren}}
+%}
+\includeonly{content/Abbildungen}
+
+\begin{document}
+%\iftoggle{testdokument}
+%{\input{content/testdokument}}%true
+{\input{content/titelseite}
+
+%\setcounter{tocdepth}{0}%damit nur Kapitel im Inhaltsvz., mit 1 auch sections -> siehe Übersicht
+\tableofcontents
+
+
+%---
+% - Änderungsmöglichkeiten für das Aussehen des TOC?
+% - Nur Kapitel in das Inhaltsverzeichnis?
+%---
+\include{content/mehrspaltiger-text}
+\include{content/tabellen}
+\include{content/indexe}
+\include{content/wiederholende-informationen}
+\include{content/glossar}
+\include{content/serienbriefe}
+\include{content/Abbildungen}
+\include{content/konditionale-operatoren}
+\include{content/tafelabbildungen}
+
+\appendix
+\include{content/Katalog}
+}
+\end{document}

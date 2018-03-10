@@ -1,0 +1,111 @@
+%!TEX root = ../document-diss.tex
+
+\chapter{Serienbriefe, die zweite}
+
+\section{Studierende an der HU}
+
+An der Humboldt-Universität zu Berlin gibt es viele Studierende:
+Klassische Archäologie (54 im Bachelor, 23 im MA,18 promovieren), 
+Alte Geschichte (98 BA, 58 MA, 28 schreiben an der Doktorarbeit),
+Klassische Philologie hat 78 Bachelors, 49 im Masterstudium und 23 stecken in der Promotion,
+anders in der Ägyptologie: 49 im Grundstudium, 57 im Aufbaustudium und 14 herangehende Doktoren.
+
+\section{Basic}
+
+\DTLdisplaydb{fachstudenten}
+
+\DTLforeach{fachstudenten}
+{\fach=Fach,%
+ \ba=BA,%
+ \ma=MA,%
+ \phd=Phd%
+}%
+{\begin{description}
+  \item[\large\fach]~%Fake-Leerzeichen
+ \begin{labeling}{Promotion}
+ 	\item[Bachelor]\ba
+ 	\item[Master]\ma
+ 	\item[Promotion]\phd
+ \end{labeling}
+\end{description}%
+}
+
+\begin{figure}[h]
+\DTLbarchart%
+  {variable=\ba,%
+  barlabel=\fach,
+  upperbarlabel=\ba}
+  {fachstudenten}%Datebankname
+  {\ba=BA,%
+  \fach=Fach}
+\caption{Anzahl der Bachelor-Studierenden}
+\end{figure}
+
+\begin{figure}[h]
+	\DTLbarchart%
+	{variable=\ma,%
+		barlabel=\fach,
+		upperbarlabel=\ma}
+	{fachstudenten}%Datebankname
+	{\ma=MA,%
+		\fach=Fach}
+	\caption{Anzahl der Master-Studierenden}
+\end{figure}
+
+\begin{figure}[h]
+	\DTLbarchart%
+	{variable=\phd,%
+		barlabel=\fach,
+		upperbarlabel=\phd}
+	{fachstudenten}%Datebankname
+	{\phd=Phd,%
+		\fach=Fach}
+	\caption{Anzahl der Promotion-Studierenden}
+\end{figure}
+
+\begin{figure}[h]
+\DTLsetpiesegmentcolor{1}{teal}
+\DTLsetpiesegmentcolor{2}{gray}
+\DTLsetpiesegmentcolor{3}{purple}
+\DTLsetpiesegmentcolor{4}{blue}
+	\DTLpiechart%
+{variable=\ba,%
+outerlabel=\fach,%
+innerlabel={\DTLpiepercent\%},%
+cutaway={2},%für ein Segment herausstellen, Zahl nach Sortierung in der Datenbank
+rotateinner%auch möglich: rotateouter -> äußere Bschriftung strahlenförmig
+}
+{fachstudenten}
+{\ba=BA,\fach=Fach}
+\end{figure}
+
+
+\begin{figure}
+\DTLsetbarcolor{2}{gray}
+\DTLbarwidth=.5cm
+	\DTLmultibarchart%
+{variables={\ba,\ma,\phd},%
+ barlabel=\fach,%
+ %vericalbars=false,%horizontale Balken
+ uppermultibarlabels={BA (\ba),MA (\ma),PhD (\phd)}}
+{fachstudenten}
+{\ba=BA,\ma=MA,\phd=Phd,\fach=Fach}
+\end{figure}
+
+%----
+% Diese Informationen möchte ich gerne auf unterschiedliche Arten zeigen:
+% - zuerst als einfache Tabellen
+% - Als Übersicht auf die einzelnen Fächer aufgeteilt
+% - Als Tortendiagramm
+% - Als Balkendiagramm wobei die Abschlüsse zusammengefasst werden
+%---
+
+
+\section{Archäologischer Katalog der Häuser von Pompeji}
+%--
+% In den Anhang/Appendix soll der Katalog.
+% Alle Daten sind in der data/haeuser.csv-Datei
+%---
+
+
+

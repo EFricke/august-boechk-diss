@@ -1,0 +1,186 @@
+%!TEX root = ../document-diss.tex
+\usepackage{babel} %2 Punkte = gehe eine Ebene nach oben bei den Dateien; magic comments -> nicht von lualatex erkannt, aber von Tex ; so auch nach Absturz dies als root-Dok erkannt
+\usepackage{libertine}
+\usepackage{xspace}
+
+\usepackage{graphicx}
+\graphicspath{{figures/}}%relativer Pafd zu den Bildern
+\usepackage{multicol}%für mehrspalitigen Text
+
+\widowpenalty=10000%zur Vermeidung einzelner Zeilen Ende Paragraph (Hurenkinder); bei zweispaltigen manchmal manuell etwas nachbessern
+\clubpenalty=10000%Vermeidung einzelner Zeilen am Anfang Paragraph (Schusterjungen)
+
+
+\usepackage{imakeidx}
+\makeindex[
+name=per,%für Personenindex
+title={Index antiker Personen},
+columns=3,
+options={-s style/index-style.tex}
+]
+
+\usepackage{imakeidx}
+\makeindex[
+name=ant,%für Personenindex
+title={Index antiker Werke und deren Textstellen},
+columns=3,
+options={-s style/index-style.tex}
+]
+
+
+\indexsetup{%
+  level=\addsec,%entspricht section* (keine Nummer)
+  firstpagestyle=scrheadings,%normale Seitenformatierung
+  headers={\indexname}{\indexname},%
+  noclearpage
+}
+
+\usepackage{chngcntr}%Vorraussetzung für Dußnoten durch alle Kapiteldurchnummerieren
+%\counterwithout{footnote}{chapter}%Fußnoten durch alle Kapitel durchnum.
+\counterwithout{table}{chapter}%Tabellen durch alle Kapitel durchnum.
+\counterwithout{figure}{chapter}
+
+\usepackage[%
+	series={},
+	nocritical,
+	noend,
+	noeledsec,
+	nofamiliar,
+	noledgroup%
+]{reledmac}
+\usepackage{reledpar}
+
+\usepackage{tabularx}%für Tabellen
+\usepackage{booktabs}%für schöne Tabellen
+\usepackage{tablefootnote}
+
+\usepackage{xcolor}%welche Farben ohne Def. zur Verfügung, s. Package-Beschr.; andere Farebn über optionale Arg. ladbar> in eckige Klammern vor xcolor
+
+\usepackage[singlelinecheck=false]{caption}
+\usepackage{chngcntr}%Anderung von Nummerierung
+ \counterwithout{table}{chapter}
+ 
+\usepackage{marginnote}
+
+\usepackage{siunitx}%für bssere Größenangaben
+
+\usepackage{etoolbox}%für konditioale operatoren
+
+\usepackage{subcaption}
+\usepackage[%
+content={Abbildung ausgeblendet},%zum schneller kompilieren
+filename,%
+size=tiny,%Schriftgröße
+%position=center%left, right etc.
+]{draftfigure}%modifizieren von Abbildungen
+
+\usepackage{datatool}%Auslesen von csv-Dateien
+\DTLloaddb{archaeologen}{csv/archaeologen.csv}%1.: interner Name der Datenbank, 2.: Speicherort der Datei
+
+\DTLloaddb%
+  {kaiser}%internet Name
+  {csv/kaiser.csv}%Speicherort Datei
+  
+\DTLloaddb{fachstudenten}{csv/fachstudenten.csv}
+
+\DTLloaddb{haeuser}{csv/haeuser.csv}
+  
+\usepackage{databar}%für Balkendiagramme
+\usepackage{datapie}%für Tortendiagramme
+\usepackage{forest}%für Baumdiagramme
+
+\usepackage[%
+section=subsection,%damit kene neue Seite
+nonumberlist,%keine Seitenzahl
+nopostdot%kein Punkt am Ende
+]{glossaries}%für Glossare
+\makeglossaries%damit Namen angezeut: auf Tools, Befehle, makeglossaries, dann nochmal kompilieren
+
+
+ 
+\setkomafont{disposition}{\normalfont}%Überschriften normal -> auch mit Serifen
+%\setkomafont{chapter}{\Large\scshape}%Kaoitelüberschrift in Kapitälchen
+\setkomafont{section}{\itshape}
+
+\addtokomafont{footnotenumber}{\normalfont\sffamily}%sffamily = ohne Serifen
+
+\deffootnote%
+ {0.075cm}%Einrückung der Fußnote
+ {\normalparindent}%Paragraphenabsatz
+ {\makebox[\normalparindent][r]{\thefootnotemark\,}}%Leerzeichen, damit mehr Abstand nach Zahl, probieren halbes Leerzeichen : \,
+ 
+\newlength{\normalparindent}
+\AtBeginDocument{\setlength{\normalparindent}{\parindent}}
+
+%\setfootnoterule{0pt}%wenn Trennstrich nicht gewollt
+\usepackage[headsepline=.5pt]{scrlayer-scrpage}
+\setkomafont{pageheadfoot}{\sffamily}
+
+\makeatletter%nötig wegen @-Zeichen
+\newcommand\BC{\,v.\,Chr\@ifnextchar.{}{.\relax\@\xspace}}%erster Fall in Klammer positiv, 2. Fall negativ, relax für Abstand nach Punkt, weil unterchiedl. nach normalen Punkt und Satzendpunkt
+\newcommand\AD{\,n.\,Chr\@ifnextchar.{}{.\relax\@\xspace}}
+\makeatother
+
+\newcommand\Index[1]{\index[per]{#1}#1\xspace}
+\newcommand\Indexmargin[1]{%
+	\index[per]{#1}%
+	\marginnote{#1}%
+	#1\xspace}
+
+
+\iffalse%alles nachfolgende wird ignoriert ; Strg + T setzt % vor alles markierte
+\newglossaryentry{Augustus}{%
+	name={\textbf{Augustus}},%
+	description={Augustus (Imperator Caesar Divi Filius Augustus),%
+		\newline geb. 63.\BC
+		\newline gest. 14\AD
+		\newline (27\BC--14\AD)},%
+	first={Augustus (27\protect\BC--14\protect\AD)}%
+}
+
+
+\newglossaryentry{Tiberius}{%
+	name={Tiberius},%
+	description={Imperator 14--37\AD},%
+	first={Tiberius (14\protect\AD--37\protect\AD)}%
+}
+\fi%und zwar bis hier
+
+\newglossaryentry{MarcAnton}{%
+	name={Marcus Antonius},
+	description={Verräter},
+	first={Marcus Antonius, der Verräter}%
+}
+
+\glssetexpandfield{name}
+\glssetexpandfield{desc}
+\glssetexpandfield{first}
+\DTLforeach*{kaiser}%Datenbank
+{\kaiser=Kaiser,%
+\name=Name,%
+\geburt=Geburt,%
+\geburtsort=Geburtsort,%
+\tod=Tod,%
+\sterbeort=Sterbeort,%
+\regierungszeit=Regierungszeit,%
+\regierungszeitkurz=Regierungszeitkurz%
+}
+{\newglossaryentry{\kaiser}%
+{name={\textbf{\kaiser}},%
+description={\kaiser\ifdefempty{\name}{}{\xspace(\name)};%
+\newline \geburt\xspace in \geburtsort},
+first={\kaiser\ifdefempty{\regierungszeitkurz}{}{\xspace (\regierungszeitkurz)}}}}
+
+%\renewcommand\thesection{Kat.\arabic{section}}%so Katalog Nummern
+
+\newtoggle{hund}%der für kond. opraetor
+\newtoggle{finalpdf}
+\newtoggle{nocopyright}
+
+\newcommand\missingcopyright{
+\iftoggle{nocopyright}
+{\setkeys{Gin}{draft}%setzt Bild auf draft
+\setkeys{draftfigure}{filename=true, content={Abbildung musste aufgrund fehelender Digitalrechte ausgeblendet werden.}}}
+{}}
+
+\renewcaptionname{ngerman}{\figurename}{Abb.}

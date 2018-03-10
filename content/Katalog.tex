@@ -1,0 +1,34 @@
+%!TEX root = ../document-diss.tex
+
+
+\chapter{Katalog der Häuser}
+
+Hier kommt der Katalog.
+
+\DTLforeach%
+  {haeuser}%
+  {\house=house,%
+   \mylabel=label,%
+   \size=size,%
+   \mydescription=description,%
+   \location=location,%
+   \interior=interior,%
+   \interiorM=interiorM,%
+   \interiorW=interiorW,%
+   \interiorS=interiorS}
+ {\section{\house}
+ \label{cat:\mylabel}%cat für Katalg, um von anderen Sachen zu unterscheiden
+ \mydescription
+ \begin{labeling}{Ausstattung}
+   \item[Größe]\size m\textsuperscript{2}
+   \item[Ort]\location
+   \item [Ausstattung]\ifdefempty{\interior}{~}{\interior}
+   \begin{description}
+   	\item[Mosaiken]\interiorM
+   	\item[Wandgemälde]\interiorW
+   	\ifdefempty{\interiorS}{~}{\item[Skulptur]\interiorS}
+   \end{description}
+ \end{labeling}%
+ }
+
+Schön ist Haus \ref{cat:M-Fabius-Rufus}.

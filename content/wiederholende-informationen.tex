@@ -1,0 +1,35 @@
+%!TEX root = ../document-diss.tex
+
+\chapter[Infos]{Sich wiederholende Informationen mit leichter Änderungen erstelle ich gerne mit LuaTeX}
+\section{Einstiegsbeispiel}
+
+
+Bekannte Archäologen sind diese:
+
+
+
+\DTLdisplaydb{archaeologen}%Zeige DB als Tabelle
+
+\DTLsort{Todesjahr=descending}{archaeologen}%bestimmte Reihenfolge
+
+\DTLdisplaydb{archaeologen}
+
+\begin{itemize}
+\DTLforeach{archaeologen}
+{\nachname=Nachname,%
+	\name=Name,%
+	\geburtsjahr=Geburtsjahr,%
+	\todesjahr=Todesjahr%
+}%
+{\item[\theDTLrowi .] \name\xspace \nachname;%für Nummerierung, i = 1. Spalte
+geboren im Jahr \geburtsjahr\ifdefempty\todesjahr{.}{;
+gestorben \todesjahr.}%
+}
+\end{itemize}
+
+%---
+% Bitte hier eine Liste erstellen:
+% Dann nach dem Todesjahr sotieren.
+% Die Daten findest du in der csv-Datei archaeologen.csv
+% ---
+
